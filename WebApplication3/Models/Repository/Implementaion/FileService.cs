@@ -31,7 +31,8 @@ namespace WebApplication3.Repository.Implementaion
                     string msg = string.Format("Only {0} extensions are allowed", string.Join(",", allowedExtensions));
                     return new Tuple<int, string>(0, msg);
                 }
-                string uniqueString = Guid.NewGuid().ToString();
+                string uniqueString = Guid.NewGuid().ToString()+"_"+imageFile.FileName;
+
                 // we are trying to create a unique filename here
                 var newFileName = uniqueString + ext;
                 var fileWithPath = Path.Combine(path, newFileName);

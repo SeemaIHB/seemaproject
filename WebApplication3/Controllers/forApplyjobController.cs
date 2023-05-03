@@ -79,8 +79,14 @@ namespace WebApplication3.Controllers
                 if (fileResult.Item1 == 1)
                 {
                     model.ProductImage = fileResult.Item2; // getting name of image
+                    model.FileDisplayName = model.ImageFile.FileName;
+
+
+
+
                 }
                 var productResult = _productRepo.AddApplyJob(model);
+
                 if (productResult)
                 {
                     status.StatusCode = 1;
